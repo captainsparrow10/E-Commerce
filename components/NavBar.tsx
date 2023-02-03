@@ -5,14 +5,14 @@ export default function NavBar() {
 	const [open, setOpen] = useState(false)
 	const handleMenu = () => setOpen(!open)
 	return (
-		<nav className="fixed top-4 flex w-full flex-col items-end p-4">
+		<nav className="fixed mt-4 flex w-full flex-col items-end p-4">
 			<button onClick={() => handleMenu()}>
 				<Bars3Icon
 					className={`h-8 w-8  ${open ? 'text-gray-600' : 'text-gray-400'}`}
 				/>
 			</button>
 			{open && (
-				<ul className="mt-3 space-y-4 text-base font-medium">
+				<ul className="mt-3 mr-8 space-y-4 text-base font-medium">
 					<li>Home</li>
 					<li>Shop</li>
 					<li>About</li>
