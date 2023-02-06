@@ -8,11 +8,13 @@ import AddBanner from 'components/Home/AddBanner'
 import TopPickForYou from 'components/Home/TopPickForYou'
 import NewProduct from 'components/Home/NewProduct'
 import Footer from 'components/Footer'
+import { useState } from 'react'
 
 export default function Home() {
+	const [isOpen, setIsOpen] = useState(false)
 	return (
 		<main className="static mb-16">
-			<NavBar />
+			<NavBar isOpen={isOpen} setIsOpen={setIsOpen} />
 			<div className="p-5">
 				<Banner />
 				<AddBanner />
