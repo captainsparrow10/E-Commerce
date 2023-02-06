@@ -1,20 +1,19 @@
-'use client'
-
 import BottomNavBar from 'components/BottomNavBar'
 import NavBar from 'components/NavBar'
 import Banner from 'components/Home/Banner'
-import Image from 'next/image'
 import AddBanner from 'components/Home/AddBanner'
 import TopPickForYou from 'components/Home/TopPickForYou'
 import NewProduct from 'components/Home/NewProduct'
 import Footer from 'components/Footer'
-import { useState } from 'react'
+import { sanityClient } from '@/pages/sanity/client'
+import { ProductInterface } from 'util/interface/products'
 
-export default function Home() {
-	const [isOpen, setIsOpen] = useState(false)
+export default async function Home() {
+	const data = await getData()
+	console.log(data)
 	return (
 		<main className="static mb-16">
-			<NavBar isOpen={isOpen} setIsOpen={setIsOpen} />
+			<NavBar />
 			<div className="p-5">
 				<Banner />
 				<AddBanner />
@@ -25,4 +24,10 @@ export default function Home() {
 			<BottomNavBar />
 		</main>
 	)
+}
+
+async function getData() {
+	const query = '*[_type == "banner"]'
+	const banner = await sanityClient.fetch<ProductInterface>(query)
+	return banner
 }

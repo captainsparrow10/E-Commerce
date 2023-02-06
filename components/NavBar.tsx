@@ -1,3 +1,4 @@
+'use client'
 import {
 	Bars3BottomLeftIcon,
 	Bars3Icon,
@@ -6,24 +7,22 @@ import {
 	ShoppingCartIcon,
 	UserIcon,
 } from '@heroicons/react/24/outline'
-import React, { Dispatch, SetStateAction } from 'react'
-type Props = {
-	isOpen: boolean
-	setIsOpen: Dispatch<SetStateAction<boolean>>
-}
-export default function NavBar({ isOpen, setIsOpen }: Props) {
+import React, { useState } from 'react'
+
+export default function NavBar() {
+	const [isOpen, setIsOpen] = useState(false)
 	return (
 		<>
 			{/* Laptop / Desktop */}
 			<nav className="hidden h-full w-full items-center justify-between py-6 px-20 lg:flex">
 				<h1 className="text-3xl font-bold uppercase">e-commerce</h1>
-				<ul className="flex space-x-12 text-base font-medium xl:space-x-20">
+				<ul className="flex space-x-12 text-base font-medium">
 					<li>Home</li>
 					<li>Shop</li>
 					<li>About</li>
 					<li>Contact</li>
 				</ul>
-				<div className="flex space-x-12 xl:space-x-20">
+				<div className="flex space-x-12 ">
 					<UserIcon className="h-7 w-7 text-gray-400" />
 					<MagnifyingGlassIcon className="h-7 w-7 text-gray-400" />
 					<HeartIcon className="h-7 w-7 text-gray-400" />
