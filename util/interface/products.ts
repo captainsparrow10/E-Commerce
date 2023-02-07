@@ -5,7 +5,13 @@ export type ProductInterface = {
 	_type: string
 	_updatedAt: string
 	description: string
-	image: { _type: string; asset: [Object] }
+	image: {
+		_type: string
+		asset: {
+			_type: string
+			_ref: string
+		}
+	}
 	name: string
 	price: number
 	slug: { _type: string; current: string }

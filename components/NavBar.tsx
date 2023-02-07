@@ -14,21 +14,23 @@ export default function NavBar() {
 	return (
 		<>
 			{/* Laptop / Desktop */}
-			<nav className="hidden h-full w-full items-center justify-between py-6 px-20 lg:flex">
-				<h1 className="text-3xl font-bold uppercase">e-commerce</h1>
-				<ul className="flex space-x-12 text-base font-medium">
-					<li>Home</li>
-					<li>Shop</li>
-					<li>About</li>
-					<li>Contact</li>
-				</ul>
-				<div className="flex space-x-12 ">
-					<UserIcon className="h-7 w-7 text-gray-400" />
-					<MagnifyingGlassIcon className="h-7 w-7 text-gray-400" />
-					<HeartIcon className="h-7 w-7 text-gray-400" />
-					<ShoppingCartIcon className="h-7 w-7 text-gray-400" />
-				</div>
-			</nav>
+			<div className='fixed top-0 w-full z-50 bg-white'>
+				<nav className="hidden h-full w-full items-center justify-between py-6 px-20 lg:flex">
+					<h1 className="text-3xl font-bold uppercase">e-commerce</h1>
+					<ul className="flex space-x-12 text-base font-medium">
+						<li>Home</li>
+						<li>Shop</li>
+						<li>About</li>
+						<li>Contact</li>
+					</ul>
+					<div className="flex space-x-12 ">
+						<UserIcon className="h-7 w-7 text-gray-400" />
+						<MagnifyingGlassIcon className="h-7 w-7 text-gray-400" />
+						<HeartIcon className="h-7 w-7 text-gray-400" />
+						<ShoppingCartIcon className="h-7 w-7 text-gray-400" />
+					</div>
+				</nav>
+			</div>
 			{/* Mobile / Tablet */}
 			<div className="lg:hidden">
 				<div className="fixed mt-4 flex w-full justify-end pr-4">
