@@ -1,5 +1,5 @@
 export default {
-  name: 'topppick',
+  name: 'toppicks',
   title: 'Top Picks',
   type: 'document',
   fields: [

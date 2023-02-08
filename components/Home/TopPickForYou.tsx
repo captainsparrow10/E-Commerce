@@ -1,7 +1,11 @@
+import { urlFor } from '@/pages/sanity/client'
 import Image from 'next/image'
 import React from 'react'
-
-export default function TopPickForYou() {
+import { ProductInterface } from 'util/interface/products'
+interface Props {
+	information: ProductInterface[]
+}
+export default function TopPickForYou({ information }: Props) {
 	return (
 		<div className="flex h-full w-full flex-col items-center space-y-14 py-14">
 			<div className="flex flex-col items-center space-y-3">
@@ -13,14 +17,22 @@ export default function TopPickForYou() {
 					suspension, floor and table lights.
 				</p>
 			</div>
-			<div className="flex h-[372px] w-[287px] flex-col">
-				<div className="relative h-2/3 w-full">
-					<Image src="/assets/tablegamer2.svg" alt="imagen" fill={true} />
-				</div>
-				<div className="h-1/3 w-max">
-					<h3 className="text-base font-normal">Item Name</h3>
-					<p className="text-2xl font-medium leading-9">$ 15000</p>
-				</div>
+			<div className='h-full flex flex-wrap gap-10 justify-center'>
+				{information.map((data) => (
+					<div className="flex h-[372px] w-[287px] flex-col" key={data._id}>
+						<div className="relative h-2/3 w-full">
+							<Image
+								src={urlFor(data && data.image).url()}
+								alt="imagen"
+								fill={true}
+							/>
+						</div>
+						<div className="h-1/3 w-max">
+							<h3 className="text-base font-normal">{data.name}</h3>
+							<p className="text-2xl font-medium leading-9">$ {data.price}</p>
+						</div>
+					</div>
+				))}
 			</div>
 			<button className="border-2 border-white text-2xl font-medium leading-9 hover:border-b-black">
 				View More

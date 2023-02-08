@@ -28,7 +28,7 @@ export default function Footer() {
 									href="https://discord.gg/4eeurUVvTy"
 									className="hover:underline"
 								>
-									Portafolio
+									Portfolio
 								</a>
 							</li>
 						</ul>
