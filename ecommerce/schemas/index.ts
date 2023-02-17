@@ -1,6 +1,7 @@
-import addbanner from './Home/addbanner'
-import banner from './Home/banner'
-import newitem from './Home/newitem'
-import toppick from './Home/toppick'
+import addbanner from './addbanner'
+import background from './background'
+import banner from './banner'
+import newitem from './newitem'
+import toppick from './toppick'
 
-export const schemaTypes = [banner, addbanner, newitem, toppick]
+export const schemaTypes = [banner, addbanner, newitem, toppick, background]

@@ -7,21 +7,31 @@ import {
 	ShoppingCartIcon,
 	UserIcon,
 } from '@heroicons/react/24/outline'
+import Link from 'next/link'
 import React, { useState } from 'react'
 
 export default function NavBar() {
 	const [isOpen, setIsOpen] = useState(false)
+	const links = ['home', 'shop', 'about', 'contacts']
 	return (
 		<>
 			{/* Laptop / Desktop */}
-			<div className='fixed top-0 w-full z-50 bg-white'>
+			<div className="fixed top-0 z-50 w-full bg-white">
 				<nav className="hidden h-full w-full items-center justify-between py-6 px-20 lg:flex">
 					<h1 className="text-3xl font-bold uppercase">e-commerce</h1>
-					<ul className="flex space-x-12 text-base font-medium">
-						<li>Home</li>
-						<li>Shop</li>
-						<li>About</li>
-						<li>Contact</li>
+					<ul className="flex space-x-12 text-base font-medium capitalize">
+						{links.map((link) => (
+							<li key={link}>
+								<Link
+									href={link == "home" ? "/" :  link}
+									onClick={() => {
+										setIsOpen(false)
+									}}
+								>
+									{link}
+								</Link>
+							</li>
+						))}
 					</ul>
 					<div className="flex space-x-12 ">
 						<UserIcon className="h-7 w-7 text-gray-400" />
@@ -69,11 +79,19 @@ export default function NavBar() {
 									<Bars3BottomLeftIcon className="h-8 w-8 text-gray-500" />
 								</button>
 							</div>
-							<ul className="space-y-5 text-base font-medium">
-								<li>Home</li>
-								<li>Shop</li>
-								<li>About</li>
-								<li>Contact</li>
+							<ul className="space-y-5 text-base font-medium capitalize">
+							{links.map((link) => (
+							<li key={link}>
+								<Link
+									href={link == "home" ? "/" :  link}
+									onClick={() => {
+										setIsOpen(false)
+									}}
+								>
+									{link}
+								</Link>
+							</li>
+						))}
 							</ul>
 						</article>
 					</section>

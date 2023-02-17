@@ -7,6 +7,12 @@ export async function getBanner() {
 	return data[0]
 }
 
+export async function getBackgroundTitle() {
+	const query = '*[_type == "background"]'
+	const data = await sanityClient.fetch<ProductInterface[]>(query)
+	return data[0]
+}
+
 export async function getAddBanner() {
 	const query = '*[_type == "addbanner"]'
 	const data = await sanityClient.fetch<ProductInterface[]>(query)

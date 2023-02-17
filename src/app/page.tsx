@@ -7,22 +7,20 @@ import NewProduct from 'components/Home/NewProduct'
 import Footer from 'components/Footer'
 import { sanityClient } from '@/pages/sanity/client'
 import { ProductInterface } from 'util/interface/products'
-import { getAddBanner, getBanner, getNewItem, getTopPicks } from 'util/func/products'
+import {
+	getAddBanner,
+	getBanner,
+	getNewItem,
+	getTopPicks,
+} from 'util/func/products'
 
 export default async function Home() {
-
 	return (
-		<main className="static mb-16 lg:mb-0">
-			<NavBar />
-			<div className="p-5">
-				<Banner information={await getBanner()} />
-				<AddBanner information={await getAddBanner()}/>
-				<TopPickForYou information = {await getTopPicks()}/>
-				<NewProduct information = {await getNewItem()} />
-			</div>
-			<Footer />
-			<BottomNavBar />
-		</main>
+		<div className="p-5">
+			<Banner information={await getBanner()} />
+			<AddBanner information={await getAddBanner()} />
+			<TopPickForYou information={await getTopPicks()} />
+			<NewProduct information={await getNewItem()} />
+		</div>
 	)
 }
-
