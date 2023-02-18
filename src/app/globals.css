@@ -8,3 +8,8 @@
     @apply font-poppins
   }
 }
+@layer components{
+  .icon{
+    @apply h-7 w-7 text-gray-400 hover:text-white
+  }
+}
